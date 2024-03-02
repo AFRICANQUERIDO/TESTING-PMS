@@ -1,0 +1,97 @@
+/* Apply styles to the entire form container */
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  /* height:90vh;
+width: 100vw; */
+  /* background: hsl(0,0%,94%); */
+}
+
+.form-container {
+  background-color: hsl(0,0%,94%);
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, .5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  height: 85%;
+  padding: 20px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* Apply styles to form title */
+.form-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+/* Apply styles to form groups */
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Apply styles to form inputs */
+.form-group .form-input {
+  width: 100%;
+  padding: 8px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+/* Apply styles to error messages */
+.error-message {
+  font-size: 12px;
+  color: #f00;
+  margin-top: 3px;
+}
+
+/* Apply styles to form submit button */
+.bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+  /* border: #03e9f4 1px solid; */
+  margin-top: -20px;
+}
+.form-submit {
+  width: 150px;
+  padding: 10px;
+  border:#03e9f4 1px solid;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form-submit:hover{
+  background-color: #03e9f4;
+}
+
+/* Apply styles to form link */
+.form-link {
+  color: #03e9f4;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.form-link:hover {
+  text-decoration: underline;
+}

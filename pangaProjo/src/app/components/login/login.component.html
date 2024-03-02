@@ -1,0 +1,35 @@
+<div (ngsubmit) = "onLogin()" class="login-wrapper">
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="user-box">
+        <input data-cy="email-link"
+          [(ngModel)]="loginObject.email"
+          type="email"
+          name="email"
+          required=""
+        />
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input data-cy="password-link"
+          [(ngModel)]="loginObject.password"
+          type="password"
+          name="password"
+          required=""
+        />
+        <label>Password</label>
+      </div>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button data-cy="submit-btn" type="submit">Submit</button>
+      </a>
+    </form>
+  </div>
+</div>
+
+<app-navbar></app-navbar>

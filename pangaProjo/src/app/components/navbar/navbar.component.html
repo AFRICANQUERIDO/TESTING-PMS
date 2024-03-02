@@ -1,0 +1,15 @@
+<nav>
+  <div class="nav-pages">
+    <div class="Title">{{ title }}</div>
+    <ul>
+      <li [routerLink]="['']" routerLinkActive="active">Home</li>
+      <li [routerLink]="['/register']" routerLinkActive="active">Register</li>
+      <li [routerLink]="['/login']" routerLinkActive="active">Login</li>
+      <li [routerLink]="['/logout']" routerLinkActive="active">Logout</li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- <router-outlet></router-outlet> -->

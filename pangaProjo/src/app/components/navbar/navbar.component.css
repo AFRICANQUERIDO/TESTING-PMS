@@ -1,0 +1,39 @@
+.nav-pages {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 10px;
+}
+
+.Title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #7f7f7f;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 15px;
+  transition: background-color 0.3s;
+  cursor:pointer;
+  border-radius: 5px;
+  padding: 10px;
+  border: #03e9f4 1px solid;
+  color: #7f7f7f;
+}
+
+li:hover {
+  background-color: #ddd;
+}
+
+li.active{
+  color: white;
+  background-color: #03e9f4;
+}
