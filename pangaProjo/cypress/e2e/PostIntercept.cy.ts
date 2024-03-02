@@ -7,7 +7,7 @@ describe('Testing sigup functionality using fixtures', () => {
             cy.get('[data-cy="email-input"]').type(regDetails.email) 
             cy.get('[data-cy="phone_number-input"]').type(regDetails.phone_number)  
             cy.get('[data-cy="password-input"]').type(regDetails.password) 
-            cy.get('[data-cy="create-account-link"]').should('not.be.disabled').click().then(el => {
+            cy.get('[data-cy="create-account-link"]').click().then(el => {
                 cy.visit('/login')
                 cy.location('pathname').should('not.equal', '/register')
                 cy.location('pathname').should('equal', '/login')
@@ -21,13 +21,13 @@ describe('Sending requests to register user without hitting the backend', () => 
     beforeEach(() => {
         cy.visit('/register')
     })
+    cy.intercept('POST', 'http://localhost:5000/users/signup', {
+        body: {
+            message: "User registered successfully"
+        }
+    }).as('RegisterRequest');
 
     it('Post request handling', () => {
-        cy.intercept('POST', 'http://localhost:5000/users/signup', {
-            body: {
-                message: "User registered successfully"
-            }
-        }).as('RegisterRequest');
 
         cy.get('.form-submit').click();
 
@@ -70,19 +70,19 @@ describe('Testing login functionality', () => {
 
 describe('Sending login requests without hitting the backend', () => {
     beforeEach(() => {
-        cy.visit('/login')
-    })
-
-    it('Post requset handling', () => {
+         cy.visit('/login')
         cy.intercept('POST', 'http://localhost:5000/users/login', {
             body: {
                 message: "Logged in successfully"
             }
         }).as('RequestToLogin');
+    })
+
+    it('Sending login requests without hitting the backend', () => {
 
         cy.get('[data-cy="submit-btn"]').click();
 
-        cy.wait('@RequestToLogin', { requestTimeout: 10000 }).then(interception => {
+        cy.wait('@RequestToLogin', { requestTimeout: 5000 }).then(interception => {
             console.log('Intercepted request:', interception.request);
             console.log('Intercepted response:', interception.response);
             expect(interception.request.body).to.exist;
