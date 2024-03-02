@@ -9,13 +9,12 @@ export const routes: Routes = [{
     path: '', redirectTo: 'landing', pathMatch: 'full'
 },
 {
-    path: 'login', component: LoginComponent,
-    children: [
-        {
-            path: 'dashboard', component: DashboardComponent
-        }
-    ]
-}, {
+    path: 'login', component: LoginComponent
+},
+{
+    path: 'dashboard', component: DashboardComponent
+}
+    , {
     path: 'register', component: RegisterComponent
 }, {
     path: '', component: LandingComponent
